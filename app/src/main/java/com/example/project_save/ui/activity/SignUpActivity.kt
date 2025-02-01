@@ -1,5 +1,6 @@
 package com.example.project_save.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,13 @@ class SignUpActivity : AppCompatActivity() {
 
         binding=ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.loginText.setOnClickListener {
+            val intent=Intent(this@SignUpActivity,
+                LoginActivity::class.java
+            )
+            startActivity(intent)
+        }
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
